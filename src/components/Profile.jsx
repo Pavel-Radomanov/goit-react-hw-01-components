@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import defaultImage from './default.jpg';
+
 // import UserData from '../user.json';
 
 // const UserData = {
