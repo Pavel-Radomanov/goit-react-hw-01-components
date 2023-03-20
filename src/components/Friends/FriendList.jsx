@@ -1,15 +1,15 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import css from './FriendList.module.css';
 
 function FriendList({ friends }) {
-  // console.log(friends);
+  console.log(friends);
   return (
     <section className={css.friends_main}>
       <ul className={css.friends__list}>
         {friends.map(({ id, avatar, name, isOnline }) => {
-          console.log(clsx({ className: false }));
-          // console.log(id);
+          // console.log(clsx({ className: false }));
+          console.log(id);
           return (
             <li key={id} className={css.friends_item}>
               <span
@@ -32,5 +32,11 @@ function FriendList({ friends }) {
     </section>
   );
 }
+FriendList.propTypes = {
+  // id: PropTypes.number.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};
 
 export default FriendList;
