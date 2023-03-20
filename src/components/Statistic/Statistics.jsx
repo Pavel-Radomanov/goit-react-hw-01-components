@@ -1,0 +1,56 @@
+import PropTypes from 'prop-types';
+// import StatisticList from './StatisticList';
+import css from './Statistics.module.css';
+
+// function randColor() {
+//   return Math.floor(Math.random() * 256);
+// }
+// const colorBack =
+//   'rgb(' + randColor() + ',' + randColor() + ',' + randColor() + ')';
+function randColor() {
+  const r = () => Math.floor(Math.random() * 256);
+  const colorBack = 'rgb(' + r() + ',' + r() + ',' + r() + ',' + 0.3 + ')';
+  return colorBack;
+}
+
+function Statistics({ title, stats }) {
+  // console.log(stats);
+  return (
+    <section className={css.statistics_main}>
+      <section className={css.statistics_title}>
+        {title && <h2>{title}</h2>}
+
+        <ul className={css.statistics_list}>
+          {stats.map(({ id, label, percentage }) => {
+            return (
+              <li
+                className={css.statistics_item}
+                key={id}
+                style={{ backgroundColor: randColor() }}
+              >
+                <span className={css.statistics_label}>{label}</span>
+                <span className={css.statistics_percentage}>{percentage}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      {/* {title && <h2 className="title">{title}</h2>} */}
+
+      {/* <ul class="stat-list">
+        <li class="item">
+          <span class="label">.docx</span>
+          <span class="percentage">4%</span>
+        </li> */}
+
+      {/* </ul> */}
+    </section>
+  );
+}
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+};
+
+export default Statistics;
