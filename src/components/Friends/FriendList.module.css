@@ -7,6 +7,7 @@
   width: 370px;
   box-shadow: 0 0 10px #3d2f26ed;
   border-radius: 10px;
+  margin: 20px;
 }
 .friends_item {
   display: flex;
@@ -17,6 +18,7 @@
   box-shadow: 0 0 8px #300657ed;
   padding: 20px;
   background-color: #7e6f7449;
+  margin-bottom: 10px;
 }
 .friends_status {
   width: 30px;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import css from './FriendList.module.css';
 
 function FriendList({ friends }) {
@@ -9,14 +9,23 @@ function FriendList({ friends }) {
       <ul className={css.friends__list}>
         {friends.map(({ id, avatar, name, isOnline }) => {
           // console.log(clsx({ className: false }));
+          const getStatus = value => {
+            if (value) {
+              return css['friends_on'];
+            } else {
+              return css['friends_off'];
+            }
+          };
+
           console.log(id);
           return (
             <li key={id} className={css.friends_item}>
               <span
-                className={clsx({
-                  'css.friends_on': isOnline,
-                  'css .friends_off': !isOnline,
-                })}
+                className={getStatus(isOnline)}
+                // className={clsx({
+                //   'css.friends_on': isOnline,
+                //   'css .friends_off': !isOnline,
+                // })}
               ></span>
               <img
                 className={css.friends_avatar}
@@ -32,11 +41,20 @@ function FriendList({ friends }) {
     </section>
   );
 }
+// in props input of friends (not list of props)
 FriendList.propTypes = {
-  // id: PropTypes.number.isRequired,
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };
+// id: PropTypes.number.isRequired,
+// avatar: PropTypes.string.isRequired,
+// name: PropTypes.string.isRequired,
+// isOnline: PropTypes.bool.isRequired,
 
 export default FriendList;

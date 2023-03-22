@@ -1,12 +1,38 @@
 .transact_main {
+  margin-top: 30px;
+  background-color: #e4dbdb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  width: 370px;
+  box-shadow: 0 0 10px #3d2f26ed;
+  border-radius: 10px;
 }
 .transact_tab {
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 90%;
 }
 .transact_thead {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #e17ceb;
+  /* padding-bottom: 25px; */
+
+  padding: 10px;
 }
-css.transact_tbody {
+/* .transact_tbody {
+} */
+.transact_tr {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #4b0752;
 }
-css.transact_tr {
-}
-css.transact_tr2 {
-}
+/* .transact_tr2 {
+  margin-top: 30px;
+} */
+/*.tr_color:nth-child(even)  */
