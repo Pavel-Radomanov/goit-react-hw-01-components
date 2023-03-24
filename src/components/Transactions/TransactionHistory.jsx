@@ -22,7 +22,7 @@ function TransactionHistory({ items }) {
 
         <tbody className={css.transact_tbody}>
           {items.map(({ id, type, amount, currency }) => {
-            console.log(id);
+            // console.log(id);
             return (
               <tr
                 key={id}
@@ -47,7 +47,7 @@ TransactionHistory.propTypes = {
       type: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ).isRequired,
 };
 export default TransactionHistory;

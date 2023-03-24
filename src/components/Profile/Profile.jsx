@@ -50,7 +50,8 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number),
+
   //   Repeta video
 };
 
