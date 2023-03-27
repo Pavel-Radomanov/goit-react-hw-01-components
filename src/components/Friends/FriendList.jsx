@@ -3,13 +3,6 @@ import FriendListItem from './FriendListItem';
 import css from './FriendList.module.css';
 
 function FriendList({ friendsData }) {
-  const getStatus = value => {
-    if (value) {
-      return css['friends_on'];
-    } else {
-      return css['friends_off'];
-    }
-  };
   return (
     <section className={css.friends_main}>
       <ul className={css.friends__list}>
@@ -17,14 +10,6 @@ function FriendList({ friendsData }) {
           console.log(friendsDataitem.isOnline);
           return (
             <li key={friendsDataitem.id} className={css.friends_card}>
-              <span
-                // className={css.friends_on}
-                className={getStatus(friendsDataitem.isOnline)}
-                // className={clsx({
-                //   'css.friends_on': isOnline,
-                //   'css .friends_off': !isOnline,
-                // })}
-              ></span>
               <FriendListItem
                 avatar={friendsDataitem.avatar}
                 name={friendsDataitem.name}
@@ -42,7 +27,6 @@ FriendList.propTypes = {
   friendsData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      isOnline: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired,
 };

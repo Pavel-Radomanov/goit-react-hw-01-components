@@ -50,8 +50,19 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number),
+  // An object with property values of a certain type
+  // stats: PropTypes.objectOf(PropTypes.number),
+  // Чи можу залишити попередню версію, що вище - вказано точний тип всіх елементів , можлива заміна?
+  // Нижче варіант не працює, дає помилку:Failed prop type: Invalid prop `stats` of type `object` supplied to `Profile`, expected an array.
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 
+  // positivePercentage: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   //   Repeta video
 };
 

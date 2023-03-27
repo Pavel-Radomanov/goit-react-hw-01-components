@@ -38,23 +38,7 @@ p {
   width: inherit;
   padding: 0;
 }
-.friends_on {
-  /* display: inline-block; */
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 30px;
-  background-color: rgb(4, 73, 4);
-}
-.friends_off {
-  /* composes:friends_on; */
-  /* display: inline-block; */
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 30px;
-  background-color: rgb(94, 6, 6);
-}
+
 .friends_card {
   display: flex;
   flex-direction: row;

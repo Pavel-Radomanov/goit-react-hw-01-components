@@ -2,11 +2,6 @@ import PropTypes from 'prop-types';
 // import StatisticList from './StatisticList';
 import css from './Statistics.module.css';
 
-// function randColor() {
-//   return Math.floor(Math.random() * 256);
-// }
-// const colorBack =
-//   'rgb(' + randColor() + ',' + randColor() + ',' + randColor() + ')';
 function randColor() {
   const r = () => Math.floor(Math.random() * 256);
   const colorBack = 'rgb(' + r() + ',' + r() + ',' + r() + ',' + 0.3 + ')';
